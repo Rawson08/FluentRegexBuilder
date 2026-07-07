@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net8.0;net10.0</TargetFrameworks>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+
+  <!-- ============ NuGet package metadata ============ -->
+  <PropertyGroup>
+    <PackageId>FluentRegexBuilder</PackageId>
+    <!-- ID verified free on nuget.org as of 2026-07-07. Note: plain "FluentRegex" is taken. -->
+    <Version>1.0.0</Version>
+    <Authors>Roshan Subedi</Authors>
+    <Description>A fluent, readable regex builder for C#. Build patterns with chainable methods — anchors, character classes, quantifiers, groups, backreferences, lookarounds, and alternation — with automatic escaping and safe quantifier grouping. Reads like the English description of your pattern.</Description>
+    <PackageTags>regex;regular-expressions;fluent;builder;readable;verbal-expressions;pattern</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageProjectUrl>https://github.com/YOUR_GITHUB_USERNAME/FluentRegexBuilder</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/YOUR_GITHUB_USERNAME/FluentRegexBuilder</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <!-- Symbols published alongside the package so consumers can debug into it -->
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <!-- Catches accidental breaking changes between versions at pack time -->
+    <EnablePackageValidation>true</EnablePackageValidation>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+</Project>
