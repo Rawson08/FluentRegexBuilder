@@ -13,7 +13,7 @@
   <PropertyGroup>
     <PackageId>FluentRegexBuilder</PackageId>
     <!-- ID verified free on nuget.org as of 2026-07-07. Note: plain "FluentRegex" is taken. -->
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <Authors>Roshan Subedi</Authors>
     <Description>A fluent, readable regex builder for C#. Build patterns with chainable methods — anchors, character classes, quantifiers, groups, backreferences, lookarounds, and alternation — with automatic escaping and safe quantifier grouping. Reads like the English description of your pattern.</Description>
     <PackageTags>regex;regular-expressions;fluent;builder;readable;verbal-expressions;pattern</PackageTags>
