@@ -1,0 +1,43 @@
+name: Publish to NuGet
+
+# Runs when you push a version tag, e.g.:  git tag v1.0.1 && git push origin v1.0.1
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  id-token: write   # required for Trusted Publishing (OIDC)
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            8.0.x
+            10.0.x
+
+      - name: Test
+        run: dotnet test -c Release
+
+      - name: Pack
+        run: dotnet pack src/FluentRegexBuilder/FluentRegexBuilder.csproj -c Release -o out
+
+      # Exchanges a GitHub OIDC token for a short-lived NuGet API key.
+      # Requires a Trusted Publisher Policy on nuget.org pointing at this repo + workflow.
+      - name: NuGet login (Trusted Publishing)
+        uses: NuGet/login@v1
+        id: login
+        with:
+          user: rawson08   # your nuget.org profile name, NOT your email
+
+      - name: Push
+        run: >
+          dotnet nuget push out/*.nupkg
+          --api-key ${{ steps.login.outputs.NUGET_API_KEY }}
+          --source https://api.nuget.org/v3/index.json
+          --skip-duplicate

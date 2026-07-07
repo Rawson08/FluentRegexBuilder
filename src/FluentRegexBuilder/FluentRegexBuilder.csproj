@@ -19,8 +19,8 @@
     <PackageTags>regex;regular-expressions;fluent;builder;readable;verbal-expressions;pattern</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageProjectUrl>https://github.com/YOUR_GITHUB_USERNAME/FluentRegexBuilder</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/YOUR_GITHUB_USERNAME/FluentRegexBuilder</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/Rawson08/FluentRegexBuilder</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Rawson08/FluentRegexBuilder</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <!-- Symbols published alongside the package so consumers can debug into it -->
